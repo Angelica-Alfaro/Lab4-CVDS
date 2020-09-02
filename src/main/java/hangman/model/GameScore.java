@@ -7,5 +7,5 @@ public interface GameScore {
 	 * @param correctCount, número de letras correctas
 	 * @param incorrectCount, número de letras incorrectas
 	 */
-	public int calculateScore(int correctCount, int incorrectCount);
+	int calculateScore(int correctCount, int incorrectCount);
 }

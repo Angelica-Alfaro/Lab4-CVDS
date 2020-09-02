@@ -1,6 +1,6 @@
 package hangman.model;
 
-public class BonusScore {
+public class BonusScore implements GameScore{
 	
 	/**
 	 * @pre calcular el puntaje a partir del número de letras correctas (+10) e incorrectas (-5)

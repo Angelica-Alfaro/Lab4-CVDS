@@ -1,6 +1,6 @@
 package hangman.model;
 
-public class PowerBonusScore {
+public class PowerBonusScore implements GameScore{
 	
 	/**
 	 * @pre calcular el puntaje a partir del número de letras correctas (+5**i) e incorrectas (-8)
