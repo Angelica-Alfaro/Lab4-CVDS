@@ -1,4 +1,4 @@
-package exceptions;
+package hangman.exceptions;
 
 public class GameExceptions extends Exception{
 	
@@ -6,3 +6,4 @@ public class GameExceptions extends Exception{
 		super(mensaje);
 	}
 }
+

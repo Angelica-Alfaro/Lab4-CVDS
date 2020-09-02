@@ -7,10 +7,12 @@ public class OriginalScore implements GameScore{
 	 * @param correctCount, número de letras correctas
 	 * @param incorrectCount, número de letras incorrectas
 	 * @return puntaje calculado 
+	 * @throws GameExceptions, se ingresan parametros invalidos
 	 */
 	public int calculateScore(int correctCount, int incorrectCount) throws Exception {
+		int initialScore=100;
 		
-		return 3;
+		
 	}
 
 }

@@ -3,7 +3,7 @@ package hangman;
 import org.junit.Assert;
 import org.junit.Test;
 
-import exceptions.GameExceptions;
+import hangman.exceptions.GameExceptions;
 import hangman.model.BonusScore;
 import hangman.model.OriginalScore;
 import hangman.model.PowerBonusScore;
@@ -22,13 +22,8 @@ public void ValidateOriginScore() {
 	
 	//ValidateScore
 	//Prueba de frontera menor que la inferior
-	try {
-		puntaje = score.calculateScore(4, 11);		
-	}
-	catch(GameExceptions e){
-		
-		Assert.assertEquals("El puntaje es inválido", e.getMessage());
-	}
+	puntaje = score.calculateScore(4, 11);	
+	Assert.assertEquals(0, puntaje);
 	
 	//Prueba igual a frontera inferior
 	puntaje = score.calculateScore(7, 10);
@@ -69,14 +64,9 @@ public void ValidateBonusScore() {
 	
 	//ValidateScore
 	//Prueba menor que la frontera
-	try {
-		puntaje = score.calculateScore(1, 10);		
-	}
-	catch(GameExceptions e){
-		
-		Assert.assertEquals("El puntaje es inválido", e.getMessage());
-	}
-		
+	puntaje = score.calculateScore(1, 10);		
+	Assert.assertEquals(0, puntaje);
+	
 	//Prueba mayor que la frontera
 	puntaje = score.calculateScore(10, 7);
 	Assert.assertEquals(65, puntaje);
@@ -112,13 +102,8 @@ public void ValidatePowerBonusScore() {
 	
 	//ValidateScore
 	//Prueba de frontera menor que la inferior
-	try {
-		puntaje = score.calculateScore(0, 1);		
-	}
-	catch(GameExceptions e){
-		
-		Assert.assertEquals("El puntaje es inválido", e.getMessage());
-	}
+	puntaje = score.calculateScore(0, 1);		
+	Assert.assertEquals(0, puntaje);
 	
 	//Prueba entre fronteras
 	puntaje = score.calculateScore(2, 3);
