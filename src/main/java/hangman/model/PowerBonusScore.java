@@ -1,5 +1,8 @@
 package hangman.model;
 
+import hangman.exceptions.GameExceptions;
+
+
 public class PowerBonusScore implements GameScore{
 	
 	/**
@@ -9,9 +12,27 @@ public class PowerBonusScore implements GameScore{
 	 * @return puntaje calculado 
 	 * @throws GameExceptions, se ingresan parametros invalidos
 	 */
-	public int calculateScore(int correctCount, int incorrectCount) {
+	public int calculateScore(int correctCount, int incorrectCount) throws GameExceptions {
+		int initialScore=0;
+		int finalScore;
 		
-		return 3;
+		if (correctCount < 0 || incorrectCount < 0) {
+			throw new GameExceptions("Parámetros inválidos");
+		}
+		else if(Math.pow(5,correctCount) < (incorrectCount*8)){
+			finalScore=0;
+		}
+		else{
+			initialScore=5;
+			for(int i=2; i<=correctCount; i++) {
+				initialScore*=5;
+			}
+			finalScore=initialScore-(incorrectCount*8);
+			if(finalScore > 500) {
+				finalScore=500;
+			}
+		}
+		return finalScore;
 	}
 
 }

@@ -13,10 +13,10 @@ public class GameScoreTest {
 /*Original score
  *ValidateScore: El puntaje debe ser mayor o igual a 0 y menor o igual a 100 
  *ValidatecorrectCount: Debe ser mayor o igual a 0
- *ValidateincorrectCount: Debe ser mayor o igual a 
+ *ValidateincorrectCount: Debe ser mayor o igual a 0 
 */	
 @Test
-public void ValidateOriginScore() {
+public void ValidateOriginScore() throws GameExceptions {
 	OriginalScore score = new OriginalScore();
 	int puntaje;
 	
@@ -44,7 +44,7 @@ public void ValidateOriginScore() {
 	}
 	catch(GameExceptions e){
 		
-		Assert.assertEquals("Parámetros invalidos", e.getMessage());
+		Assert.assertEquals("Parámetros inválidos", e.getMessage());
 	}
 	
 	//Prueba de parametros validos
@@ -58,7 +58,7 @@ public void ValidateOriginScore() {
  *ValidateincorrectCount: Debe ser mayor o igual a 0
 */
 @Test
-public void ValidateBonusScore() {
+public void ValidateBonusScore() throws GameExceptions {
 	BonusScore score = new BonusScore();
 	int puntaje;
 	
@@ -82,7 +82,7 @@ public void ValidateBonusScore() {
 	}
 	catch(GameExceptions e){
 		
-		Assert.assertEquals("Parámetros invalidos", e.getMessage());
+		Assert.assertEquals("Parámetros inválidos", e.getMessage());
 	}
 	
 	//Prueba de parametros validos
@@ -96,7 +96,7 @@ public void ValidateBonusScore() {
  *ValidateincorrectCount: no debe ser menor a 0 
  */
 @Test
-public void ValidatePowerBonusScore() {
+public void ValidatePowerBonusScore() throws GameExceptions {
 	PowerBonusScore score = new PowerBonusScore();
 	int puntaje;
 	
@@ -107,11 +107,11 @@ public void ValidatePowerBonusScore() {
 	
 	//Prueba entre fronteras
 	puntaje = score.calculateScore(2, 3);
-	Assert.assertEquals(0, puntaje);
+	Assert.assertEquals(1, puntaje);
 	
 	//Prueba mayor que la frontera superior 
 	puntaje = score.calculateScore(4, 6);
-	Assert.assertEquals(50, puntaje);
+	Assert.assertEquals(500, puntaje);
 	
 	//ValidatecorrectCount y ValidateincorrectCount
 	//Prueba de parametros negativos
@@ -120,43 +120,11 @@ public void ValidatePowerBonusScore() {
 	}
 	catch(GameExceptions e){
 		
-		Assert.assertEquals("Parámetros invalidos", e.getMessage());
+		Assert.assertEquals("Parámetros inválidos", e.getMessage());
 	}
 	
 	//Prueba de parametros validos
 	puntaje = score.calculateScore(2, 3);
 	Assert.assertEquals(puntaje,puntaje);
+}	
 }
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
