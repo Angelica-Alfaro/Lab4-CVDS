@@ -46,19 +46,17 @@ principio de inversión de dependencias:
 
 ## Clases de equivalencia
 
-* ***Original score***\
-
+* ***Original score*** \
     *ValidateScore: El puntaje debe ser mayor o igual a 0 y menor o igual a 100 
     *ValidatecorrectCount: Debe ser mayor o igual a 0
     *ValidateincorrectCount: Debe ser mayor o igual a 0
 
-* ***Bonus Score***\
-
+* ***Bonus Score*** \
     *ValidateScore: Debe ser mayor o igual a 0
     *ValidatecorrectCount: Debe ser mayor o igual a 0
     *ValidateincorrectCount: Debe ser mayor o igual a 0
 
-* ***PowerBonusScore***\
+* ***PowerBonusScore*** \
     * ValidateScore: Debe ser mayor a 0 y menor o igual a 500
     * ValidatecorrectCount: Debe ser mayor o igual a 0
     * ValidateincorrectCount: Debe ser mayor o igual a 0 
