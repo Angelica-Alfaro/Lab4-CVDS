@@ -24,5 +24,4 @@ public class HangmanFactoryServices extends com.google.inject.AbstractModule {
         /* Guice dependency injection */
         // bind(Interface.class).to(Concrete.class);
     }
-
 }

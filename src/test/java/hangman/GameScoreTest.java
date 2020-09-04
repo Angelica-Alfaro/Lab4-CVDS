@@ -91,9 +91,9 @@ public void ValidateBonusScore() throws GameExceptions {
 }
 
 /*PowerBonusScore
- *ValidateScore: no debe ser menor a 0 y mayor a 500
- *ValidatecorrectCount: no debe ser menor a 0
- *ValidateincorrectCount: no debe ser menor a 0 
+ *ValidateScore: Debe ser mayor a 0 y menor o igual a 500
+ *ValidatecorrectCount: Debe ser mayor o igual a 0
+ *ValidateincorrectCount: Debe ser mayor o igual a 0 
  */
 @Test
 public void ValidatePowerBonusScore() throws GameExceptions {
@@ -107,7 +107,7 @@ public void ValidatePowerBonusScore() throws GameExceptions {
 	
 	//Prueba entre fronteras
 	puntaje = score.calculateScore(2, 3);
-	Assert.assertEquals(1, puntaje);
+	Assert.assertEquals(6, puntaje);
 	
 	//Prueba mayor que la frontera superior 
 	puntaje = score.calculateScore(4, 6);
